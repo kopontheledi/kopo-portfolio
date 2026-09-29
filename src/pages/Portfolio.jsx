@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Mail, ArrowRight } from "lucide-react";
 
 import Navbar from "../components/Navbar";
@@ -6,46 +5,18 @@ import Footer from "../components/Footer";
 import SectionTitle from "../components/SectionTitle";
 import SkillCard from "../components/SkillCard";
 import ProjectCard from "../components/ProjectCard";
+
 import kopoImage from "../assets/images/kopo-ntheledi-img.jpg";
 
 import { starterProjects } from "../data/projects";
 
 export default function Portfolio() {
-    const [projects, setProjects] = useState(starterProjects);
-
-    useEffect(() => {
-        if (!firebaseConfigured || !db) return;
-
-        const loadProjects = async () => {
-            try {
-                const projectsQuery = query(
-                    collection(db, "projects"),
-                    orderBy("createdAt", "desc")
-                );
-
-                const snapshot = await getDocs(projectsQuery);
-
-                if (!snapshot.empty) {
-                    setProjects(
-                        snapshot.docs.map((document) => ({
-                            id: document.id,
-                            ...document.data(),
-                        }))
-                    );
-                }
-            } catch (error) {
-                console.warn("Using starter projects", error);
-            }
-        };
-
-        loadProjects();
-    }, []);
-
     return (
         <>
             <Navbar />
 
             <main id="top">
+
                 {/* HERO */}
                 <section className="hero">
                     <div>
@@ -83,14 +54,15 @@ export default function Portfolio() {
                         </div>
                     </div>
 
-                   <div className="portrait">
-    <img
-        src={kopoImage}
-        alt="Kopo Ntheledi"
-        className="portrait-image"
-    />
-</div>
+                    <div className="portrait">
+                        <img
+                            src={kopoImage}
+                            alt="Kopo Ntheledi"
+                            className="portrait-image"
+                        />
+                    </div>
                 </section>
+
 
                 {/* ABOUT */}
                 <section id="about">
@@ -107,13 +79,14 @@ export default function Portfolio() {
 
                         <p>
                             My background includes content and web development work
-                            at R-E-D, where I worked with Joomla, WordPress, HTML/CSS
-                            and later backend and development technologies including
-                            PHP, SQL, Python and JavaScript. I also build modern
-                            React, Next.js, Firebase and Supabase projects.
+                            at R-E-D, where I worked with Joomla, WordPress,
+                            HTML/CSS and later backend and development technologies
+                            including PHP, SQL, Python and JavaScript. I also build
+                            modern React, Next.js and Supabase applications.
                         </p>
                     </div>
                 </section>
+
 
                 {/* SKILLS */}
                 <section id="skills">
@@ -123,6 +96,7 @@ export default function Portfolio() {
                     />
 
                     <div className="grid3">
+
                         <SkillCard
                             title="Frontend"
                             items={[
@@ -138,12 +112,12 @@ export default function Portfolio() {
                         <SkillCard
                             title="Backend & Data"
                             items={[
-                                "Firebase",
-                                "Firestore",
                                 "Supabase",
                                 "PHP",
                                 "SQL",
                                 "Python",
+                                "REST APIs",
+                                "PHPMyAdmin",
                             ]}
                         />
 
@@ -158,8 +132,10 @@ export default function Portfolio() {
                                 "Netlify",
                             ]}
                         />
+
                     </div>
                 </section>
+
 
                 {/* EXPERIENCE */}
                 <section id="experience">
@@ -179,11 +155,11 @@ export default function Portfolio() {
                             </h3>
 
                             <p>
-                                Started in content operations working with Joomla and
-                                WordPress, then moved into the development team.
+                                Started in content operations working with Joomla
+                                and WordPress, then moved into the development team.
                                 Worked across site maintenance, backend development
-                                and web technologies including PHP, PHPMyAdmin, SQL,
-                                Python and JavaScript.
+                                and web technologies including PHP, PHPMyAdmin,
+                                SQL, Python and JavaScript.
                             </p>
                         </div>
                     </article>
@@ -200,23 +176,24 @@ export default function Portfolio() {
 
                             <p>
                                 Completed JavaScript Engineering / Software
-                                Engineering training, building a foundation in modern
-                                web development.
+                                Engineering training, building a foundation in
+                                modern web development.
                             </p>
                         </div>
                     </article>
                 </section>
+
 
                 {/* PROJECTS */}
                 <section id="projects">
                     <SectionTitle
                         eyebrow="SELECTED WORK"
                         title="Projects I’ve built"
-                        copy="Projects can be managed from the Firebase-powered admin area."
+                        copy="A selection of websites and web applications I’ve designed and developed."
                     />
 
                     <div className="projects">
-                        {projects.map((project) => (
+                        {starterProjects.map((project) => (
                             <ProjectCard
                                 key={project.id}
                                 project={project}
@@ -224,6 +201,7 @@ export default function Portfolio() {
                         ))}
                     </div>
                 </section>
+
 
                 {/* CONTACT */}
                 <section
@@ -240,8 +218,8 @@ export default function Portfolio() {
                         </h2>
 
                         <p>
-                            I’m open to web-development opportunities and digital
-                            projects.
+                            I’m open to web development opportunities,
+                            collaborations and digital projects.
                         </p>
                     </div>
 
@@ -253,6 +231,7 @@ export default function Portfolio() {
                         kopontheledi@gmail.com
                     </a>
                 </section>
+
             </main>
 
             <Footer />
