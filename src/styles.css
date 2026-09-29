@@ -1,0 +1,431 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap");
+
+:root {
+  font-family: "DM Sans", sans-serif;
+  color: #171717;
+  background: #f6f3ee;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.nav {
+  height: 76px;
+  padding: 0 max(6vw, 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background: rgba(246, 243, 238, 0.94);
+  backdrop-filter: blur(10px);
+  z-index: 20;
+  border-bottom: 1px solid #ddd8d0;
+}
+
+.brand {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.brand span,
+.kicker,
+.section-title > p {
+  color: #826a4f;
+}
+
+.nav nav {
+  display: flex;
+  gap: 26px;
+  font-size: 14px;
+}
+
+.menu {
+  display: none;
+  border: 0;
+  background: none;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+main > section {
+  padding: 100px max(7vw, 28px);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: calc(100vh - 76px);
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 8vw;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(48px, 6.7vw, 96px);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  margin: 18px 0 28px;
+  max-width: 1000px;
+}
+
+.hero h1 em {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+
+.lead {
+  font-size: 19px;
+  max-width: 680px;
+  color: #555;
+}
+
+.kicker,
+.section-title > p {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+/* =========================
+   BUTTONS & ACTIONS
+========================= */
+
+.actions,
+.project-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn {
+  border: 1px solid #222;
+  padding: 12px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.primary {
+  background: #171717;
+  color: white;
+}
+
+/* =========================
+   PORTRAIT
+========================= */
+
+.portrait {
+    width: 100%;
+    max-width: 430px;
+    height: 540px;
+    margin-left: auto;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #e9e4dc;
+}
+
+.portrait-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center top;
+}
+
+@media (max-width: 768px) {
+    .portrait {
+        max-width: 100%;
+        height: 450px;
+        margin: 30px auto 0;
+    }
+
+    .portrait-image {
+        object-position: center top;
+    }
+}
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title {
+  max-width: 720px;
+  margin-bottom: 48px;
+}
+
+.section-title h2,
+.contact h2 {
+  font-size: clamp(36px, 4vw, 60px);
+  line-height: 1.05;
+  margin: 10px 0;
+}
+
+.section-title span {
+  color: #666;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+}
+
+.big-copy {
+  font-size: 28px;
+  line-height: 1.35;
+  margin: 0;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card,
+.project-card {
+  background: #fff;
+  border: 1px solid #e4dfd7;
+}
+
+.card {
+  padding: 30px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags span {
+  font-size: 12px;
+  padding: 6px 10px;
+  background: #eeeae4;
+}
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  padding: 30px 0;
+  border-top: 1px solid #d8d1c7;
+  max-width: 1000px;
+}
+
+.experience h3 {
+  margin-top: 0;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.project-art {
+  height: 220px;
+  background: #292725;
+  display: flex;
+  align-items: flex-end;
+  padding: 22px;
+  color: white;
+}
+
+.project-body {
+  padding: 26px;
+}
+
+.project-body h3 {
+  font-size: 26px;
+  margin: 5px 0;
+}
+
+.project-links a {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+  background: #191817;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 40px;
+}
+
+.light {
+  border-color: white;
+}
+
+.contact .kicker {
+  color: #cdb99f;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  padding: 55px max(7vw, 28px);
+  text-align: center;
+}
+
+/* =========================
+   ADMIN
+========================= */
+
+.admin-shell {
+  max-width: 900px;
+  margin: 70px auto;
+  padding: 30px;
+}
+
+.admin-shell form {
+  display: grid;
+  gap: 12px;
+  max-width: 650px;
+}
+
+.admin-shell input {
+  padding: 14px;
+  border: 1px solid #ccc;
+  font: inherit;
+}
+
+.admin-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-list {
+  margin: 35px 0;
+}
+
+.admin-list article {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-list p {
+  margin: 0;
+  color: #777;
+}
+
+.admin-list button {
+  border: 0;
+  background: none;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+  .menu {
+    display: block;
+  }
+
+  .nav nav {
+    display: none;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: #f6f3ee;
+    padding: 24px;
+    flex-direction: column;
+  }
+
+  .nav nav.open {
+    display: flex;
+  }
+
+  .hero,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 60px;
+  }
+
+  .portrait {
+    max-width: 420px;
+  }
+
+  .grid3,
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .experience {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  main > section {
+    padding: 72px 24px;
+  }
+}
