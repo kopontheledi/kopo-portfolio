@@ -4,7 +4,7 @@ export default function Footer() {
       <strong>Kopo Ntheledi</strong>
 
       <p>
-        Web Developer • Building useful, responsive digital experiences.
+        Junior Software Developer • Building useful, responsive digital experiences.
       </p>
 
       <small>
