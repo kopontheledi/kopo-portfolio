@@ -21,7 +21,7 @@ export default function Portfolio() {
                 <section className="hero">
                     <div>
                         <p className="kicker">
-                            WEB DEVELOPER • JOHANNESBURG
+                            JUNIOR SOFTWARE DEVELOPER • JOHANNESBURG • RUSTENBURG
                         </p>
 
                         <h1>
@@ -30,7 +30,7 @@ export default function Portfolio() {
                         </h1>
 
                         <p className="lead">
-                            I’m Kopo Ntheledi, a web developer with professional
+                            I’m Kopo Ntheledi, a junior software developer with professional
                             experience across CMS development, frontend interfaces
                             and database-backed web applications.
                         </p>
