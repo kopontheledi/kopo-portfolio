@@ -220,8 +220,7 @@ export default function Portfolio() {
                         </h2>
 
                         <p>
-                            I’m open to web development opportunities,
-                            collaborations and digital projects.
+                           I'm open to junior software development opportunities, including frontend development, JavaScript development, software support and other entry-level tech roles that align with my skills. I'm also interested in collaborations, practical projects and opportunities to grow as a developer while contributing to meaningful solutions.
                         </p>
                     </div>
 
