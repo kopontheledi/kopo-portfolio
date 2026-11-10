@@ -113,6 +113,7 @@ export default function Portfolio() {
                             title="Backend & Data"
                             items={[
                                 "Supabase",
+                                "Firebase",
                                 "PHP",
                                 "SQL",
                                 "Python",
@@ -130,6 +131,7 @@ export default function Portfolio() {
                                 "WordPress",
                                 "Vite",
                                 "Netlify",
+                                "Vercel"
                             ]}
                         />
 
